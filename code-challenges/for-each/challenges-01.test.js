@@ -146,6 +146,17 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  arr.forEach((val, idx) => {
+    if (val % 3 === 0  && val % 5 === 0 ){
+      console.log('fizzBuzz');
+    }else if(val % 3 === 0 ){
+      console.log('fizz');
+    }else if(val % 5 === 0 ){
+      console.log('buzz');
+    }else{
+      console.log(val);
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
