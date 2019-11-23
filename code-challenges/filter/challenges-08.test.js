@@ -26,6 +26,13 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let vowels = 'aeiou';
+  let newArray = arr.filter((val, idx) => {
+    vowels.map(value => {
+      return val === value;
+    });
+  });
+  return newArray;
 };
 
 
@@ -39,6 +46,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  return arr.filter(num => !forbiddenValues.includes(num));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +90,12 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  let newArray = arr.filter(obj=> {
+    if( obj.baseStat > minBaseStat){
+      return obj;
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +108,12 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let newArray = arr.filter(obj=> {
+    if( obj.baseStat > minBaseStat){
+      return obj.stat.name;
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,6 +167,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  return arr.filter(c => !c.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,6 +180,9 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  let numberArray = arr.filter(el => Number(el));
+  // console.log('numberArray : ', numberArray);
+  return numberArray.map(num => (num % 2 === 0 ? 'even' : 'odd'));
 };
 
 /* ------------------------------------------------------------------------------------------------
