@@ -105,7 +105,7 @@ const removeWithAnon = (arr) => {
   return arr;
 };
 
-const anonymous = (value, idx, arr) => {
+const anonymous = (value, arr, callback) => {
   callback(value, arr);
 };
 
@@ -128,6 +128,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const list = [];
+  availableItems.forEach(item => {
+    if (item.available) {
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,18 +152,21 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  //Solution code here...
+  const newArray = [];
   arr.forEach((val, idx) => {
-    if (val % 3 === 0  && val % 5 === 0 ){
-      console.log('fizzBuzz');
+    if (val % 3 === 0 && val % 5 === 0 ){
+      newArray.push('fizzBuzz');
     }else if(val % 3 === 0 ){
-      console.log('fizz');
+      newArray.push('fizz');
     }else if(val % 5 === 0 ){
-      console.log('buzz');
+      newArray.push('buzz');
     }else{
-      console.log(val);
+      newArray.push(val);
     }
+    return newArray;
   });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,7 +215,7 @@ describe('Testing challenge 5', () => {
 });
 
 describe('Testing challenge 6', () => {
-  const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
+  const inventory = [{ name: 'apples', available: true, }, { name: 'pears', available: true, }, { name: 'oranges', available: false, }, { name: 'bananas', available: true, }, { name: 'blueberries', available: false, }];
 
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);
