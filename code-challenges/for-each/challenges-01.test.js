@@ -101,12 +101,12 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
-  arr.forEach( anonymous() );
+  arr.forEach( anonymous );
   return arr;
 };
 
-const anonymous = (value, arr, callback) => {
-  callback(value, arr);
+const anonymous = (value, idx, arr) => {
+  removeOne(value, arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,19 +154,18 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   //Solution code here...
   const newArray = [];
-  arr.forEach((val, idx) => {
+  arr.forEach((val) => {
     if (val % 3 === 0 && val % 5 === 0 ){
-      newArray.push('fizzBuzz');
+      newArray.push('Fizz Buzz');
     }else if(val % 3 === 0 ){
-      newArray.push('fizz');
+      newArray.push('Fizz');
     }else if(val % 5 === 0 ){
-      newArray.push('buzz');
+      newArray.push('Buzz');
     }else{
       newArray.push(val);
     }
-    return newArray;
   });
-
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
