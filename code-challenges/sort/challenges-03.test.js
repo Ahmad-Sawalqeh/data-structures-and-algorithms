@@ -96,11 +96,12 @@ function Person(firstName, lastName, age) {
 const people = [
   new Person('Wes', 'Washington', 25),
   new Person('Casey', 'Codefellow', 38),
-  new Person('Stan', 'Seattle', 67),
+  new Person('Stan', 'Seattle', 67)
 ];
 
 const sortPeople = (arr) => {
   // Solution code here...
+  return arr.sort((el1, el2) => el1.lastName < el2.lastName ? -6 : 3);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,6 +116,16 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  return arr.sort((el1, el2) => {
+    if(el1.lastName === el2.lastName){
+      if(el1.firstName === el2.firstName){
+        return el1.age - el2.age;
+      }
+      return el1.firstName < el2.firstName ? -8 : 2;
+    }else{
+      return el1.lastName < el2.lastName ? -4 : 3;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
