@@ -23,6 +23,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  return arr.filter(val => val.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(val => val.replace(/[() -]/g,''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +49,8 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let arr = str.split('');
+  return arr.filter((val, idx) => idx % 2 !== 0 ? val : 0).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +61,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every(val => val.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +72,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+  return arr.filter(val=>val.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,6 +83,7 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  return arr.every(val=>val.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,6 +100,7 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  return arr.map(val=>val.filter(v=>!v.includes('Brook')));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,6 +128,15 @@ const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat
 
 const sortByDay = (arr) => {
   // Solution code here...
+  return daysOfWeek.map(day=>{
+    let inArr = [];
+    arr.forEach(val=>{
+      if(val.includes(day)){
+        inArr.push(val);
+      }
+    });
+    return inArr;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
