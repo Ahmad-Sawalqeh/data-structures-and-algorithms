@@ -101,12 +101,12 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
-  arr.forEach( anonymous() );
+  arr.forEach( anonymous );
   return arr;
 };
 
 const anonymous = (value, idx, arr) => {
-  callback(value, arr);
+  removeOne(value, arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,6 +128,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const list = [];
+  availableItems.forEach(item => {
+    if (item.available) {
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +152,20 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  //Solution code here...
+  const newArray = [];
+  arr.forEach((val) => {
+    if (val % 3 === 0 && val % 5 === 0 ){
+      newArray.push('Fizz Buzz');
+    }else if(val % 3 === 0 ){
+      newArray.push('Fizz');
+    }else if(val % 5 === 0 ){
+      newArray.push('Buzz');
+    }else{
+      newArray.push(val);
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -194,7 +214,7 @@ describe('Testing challenge 5', () => {
 });
 
 describe('Testing challenge 6', () => {
-  const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
+  const inventory = [{ name: 'apples', available: true, }, { name: 'pears', available: true, }, { name: 'oranges', available: false, }, { name: 'bananas', available: true, }, { name: 'blueberries', available: false, }];
 
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);
