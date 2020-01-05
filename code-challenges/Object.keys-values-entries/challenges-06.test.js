@@ -93,7 +93,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  
+  var r = false;
+  arr.forEach(obj => {
+    let val = Object.values(obj);
+    if( val[0] === character && val[2].length > 0) r = true;
+  });
+  return r;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,6 +111,12 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  var r = false;
+  arr.forEach(obj => {
+    let val = Object.entries(obj);
+    if( val[0][1] === character && val[2][1].length > 0) r = true;
+  });
+  return r;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +127,16 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let totalCharacters = 0;
+  arr.forEach(obj => {
+    let value = Object.values(obj);
+    let name = 1;// name of the character
+    let spouse = 0;
+    if(value[1] !== null) spouse++;
+    let children = value[2].length;
+    totalCharacters += children + name + spouse;
+  });
+  return totalCharacters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,6 +152,16 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  arr.forEach(obj => {
+    let value = Object.values(obj);
+    let name = 1;// name of the character
+    let spouse = 0;
+    if(value[1] !== null) spouse++;
+    let children = value[2].length;
+    let house = value[3];
+    let members = children + name + spouse;
+    sizes.push({ house, members});
+  });
   return sizes;
 };
 
@@ -154,7 +185,14 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
+  let spouse = 0, members = 0, house;
   // Solution code here...
+  arr.forEach(obj => {
+    if(obj.spouse !== null && !deceasedSpouses.includes(obj.spouse)) spouse++;
+    house = obj.house;
+    members = obj.children.length + 1 + spouse;
+    survivors.push({ house, members});
+  });
   return survivors;
 };
 
