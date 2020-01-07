@@ -26,13 +26,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
-  let vowels = 'aeiou';
-  let newArray = arr.filter((val, idx) => {
-    vowels.map(value => {
-      return val === value;
-    });
-  });
-  return newArray;
+  // let vowels = 'aeiou';
+  return arr.filter(str => /[aeiou]/.test(str));
 };
 
 
@@ -90,12 +85,8 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
-  let newArray = arr.filter(obj=> {
-    if( obj.baseStat > minBaseStat){
-      return obj;
-    }
-  });
-  return newArray;
+  return arr.filter(obj=> obj.baseStat > minBaseStat);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,12 +99,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
-  let newArray = arr.filter(obj=> {
-    if( obj.baseStat > minBaseStat){
-      return obj.stat.name;
-    }
-  });
-  return newArray;
+  return getBaseStatGreaterThan(arr, minBaseStat).map(val => val.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,8 +166,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
-  let numberArray = arr.filter(el => Number(el));
-  // console.log('numberArray : ', numberArray);
+  let numberArray = arr.filter(el => Number.isInteger(el));
   return numberArray.map(num => (num % 2 === 0 ? 'even' : 'odd'));
 };
 
