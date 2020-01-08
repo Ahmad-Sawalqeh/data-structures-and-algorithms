@@ -71,6 +71,15 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let result = [];
+  arr.reduce((acc, val, idx) => {
+    result.push(val.name);
+  },[]);
+  return result;
+  // return arr.reduce((acc, val, idx) => {
+  //   acc.push(val.name);
+  //   return acc;
+  // },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +92,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return str.split('').reduce((acc, val)=> val + acc, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +146,7 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, val)=> (val.children) ? acc + val.children.length : acc, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,6 +159,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+  // let { count, sum } = arr.reduce()
+  let avg = arr.reduce((acc, val) => {
+    acc.count++;
+    acc.sum += val;
+    return acc;
+  }, { count : 0 , sum : 0 });
+  return avg.sum / avg.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,6 +187,10 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, val)=>{
+    isPrime(val) ? acc++ : acc;
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -212,6 +234,12 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   // Solution code here...
+  // let noMatch;
+  let obj = arr.reduce((acc, val) => {
+    if(val.stat.name === statName) acc = val;
+    return acc;
+  }, {});
+  return obj.stat ? obj : null;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -226,6 +254,12 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   // Solution code here...
+  return arr
+    .filter(val=>/[a]/g.test(val.name))
+    .reduce((acc, val)=>{
+      if(val.children) val.children.forEach(child=>acc.push(child));// acc = acc.concat(val.children)
+      return acc;
+    },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
