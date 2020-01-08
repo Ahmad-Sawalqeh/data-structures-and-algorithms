@@ -10,12 +10,13 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
-  let newArray = arr.map(val => {
-    let capitalFirstChar = val.charAt(0).toUpperCase();
-    let newString = capitalFirstChar + val.slice(1);
-    return newString;
-  });
-  return newArray;
+  // let newArray = arr.map(val => {
+  //   let capitalFirstChar = val.charAt(0).toUpperCase();
+  //   let newString = capitalFirstChar + val.slice(1);
+  //   return newString;
+  // });
+  // return newArray;
+  return arr.map(val => val.charAt(0).toUpperCase() + val.slice(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,14 +93,10 @@ let starWarsData = [{
 let biggerThanLuke = (arr) => {
   // Solution code here...
   const lukeMass = Number(starWarsData[0].mass);
-  let newArray = [], newValue;
-  arr.forEach(val => {
-    if(Number(val.mass) > lukeMass){
-      newValue = val.name;
-      newArray.push(newValue);
-    }
-  });
-  return newArray;
+  return arr
+    .filter(val => Number(val.mass) > lukeMass)
+    .map(val=>val.name)
+    .join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,13 +115,7 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    if(a[property] < b[property]){
-      return false;
-    }else{
-      return true;
-    }}
-  );
+  return arr.sort((a, b) => a[property] < b[property] ? -5 : 8);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,7 +131,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  // Solution code here...
+  return /^https:\/\//.test(url);// ??
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,6 +156,7 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  // ??
 };
 
 /* ------------------------------------------------------------------------------------------------
