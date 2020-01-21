@@ -295,4 +295,4 @@ describe('Testing challenge 8', () => {
 //       new Meeting('Friday', '1200', '1345'),
 //     ]);
 //   });
-});
+// });
