@@ -237,4 +237,4 @@ describe('Testing challenge 4', () => {
 //   test('It should not treat empty 3 in row as winner', () => {
 //     expect(detectTicTacToeWin([['', '', ''], ['O', 'O', ''], ['X', 'O', 'X']])).toEqual(false);
 //   });
-});
+// });
