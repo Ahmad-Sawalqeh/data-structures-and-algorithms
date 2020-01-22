@@ -274,25 +274,25 @@ describe('Testing challenge 8', () => {
   });
 });
 
-describe('Testing challenge 9', () => {
-  test('It should sort meetings by the day on which they happen', () => {
-    const sortedMeetings = sortMeetingsByDay(meetings);
-    expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
-    expect(sortedMeetings[2]).toStrictEqual(new Meeting('Tuesday', '1145', '1315'));
-    expect(sortedMeetings.slice(3,5)).toEqual(expect.arrayContaining([new Meeting('Wednesday', '0930', '1000'), new Meeting('Wednesday', '1300', '1500')]));
-    expect(sortedMeetings[5]).toStrictEqual(new Meeting('Friday', '1200', '1345'));
-  });
-});
+// describe('Testing challenge 9', () => {
+//   test('It should sort meetings by the day on which they happen', () => {
+//     const sortedMeetings = sortMeetingsByDay(meetings);
+//     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
+//     expect(sortedMeetings[2]).toStrictEqual(new Meeting('Tuesday', '1145', '1315'));
+//     expect(sortedMeetings.slice(3,5)).toEqual(expect.arrayContaining([new Meeting('Wednesday', '0930', '1000'), new Meeting('Wednesday', '1300', '1500')]));
+//     expect(sortedMeetings[5]).toStrictEqual(new Meeting('Friday', '1200', '1345'));
+//   });
+// });
 
-describe('Testing challenge 10', () => {
-  test('It should sort meetings by when they happen', () => {
-    expect(sortSchedule(meetings)).toStrictEqual([
-      new Meeting('Monday', '0900', '0945'),
-      new Meeting('Monday', '0900', '1000'),
-      new Meeting('Tuesday', '1145', '1315'),
-      new Meeting('Wednesday', '0930', '1000'),
-      new Meeting('Wednesday', '1300', '1500'),
-      new Meeting('Friday', '1200', '1345'),
-    ]);
-  });
-});
+// describe('Testing challenge 10', () => {
+//   test('It should sort meetings by when they happen', () => {
+//     expect(sortSchedule(meetings)).toStrictEqual([
+//       new Meeting('Monday', '0900', '0945'),
+//       new Meeting('Monday', '0900', '1000'),
+//       new Meeting('Tuesday', '1145', '1315'),
+//       new Meeting('Wednesday', '0930', '1000'),
+//       new Meeting('Wednesday', '1300', '1500'),
+//       new Meeting('Friday', '1200', '1345'),
+//     ]);
+//   });
+// });
