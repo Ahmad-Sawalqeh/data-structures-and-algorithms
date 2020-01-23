@@ -5,7 +5,7 @@
 | **Num** | **Type** | **Exercises** |
 | --- | --- | --- |
 | 1. | [.forEach()](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/for-each) | 7 |
-| 2. | [pass value or by reference](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/value-vs-reference) | 5 |
+| 2. | [pass by value or by reference](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/value-vs-reference) | 5 |
 | 3. | [.sort()](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/sort) | 10 |
 | 4. | [.slice(), .splice(), .split(), .join()](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/Array-and-String-Methods) | 10 |
 | 5. | [.keys(), .values(), .entries()](https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/tree/master/code-challenges/Object.keys-values-entries) | 7 |
