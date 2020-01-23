@@ -14,12 +14,18 @@ I start to use for-loop statment to itirate over a sorted array and assign the i
 <!-- Embedded whiteboard image -->
 ```
 function binarySearch(arr, searchKey){
-  let indexOfSearchKey = -1;
-  for(let i = 0; i < arr.length ; i++){
-    if(searchKey == arr[i]){
-      indexOfSearchKey = i;
+  let start = 0, end = arr.length - 1;
+  while (start <= end) {
+    if (searchKey === arr[Math.floor((start + end) / 2)]) {
+      return Math.floor((start + end) / 2);
+    }
+    if (searchKey > arr[Math.floor((start + end) / 2)]) {
+      start = Math.floor((start + end) / 2) + 1;
+    }
+    if (searchKey < arr[Math.floor((start + end) / 2)]) {
+      end = Math.floor((start + end) / 2) - 1;
     }
   }
-  return indexOfSearchKey;
+  return -1;
 }
 ```
