@@ -34,4 +34,8 @@ describe('testing to get the right fibonacci Sequence of an integer', () => {
     expect(fibonacciSequence(-1)).toEqual(1);
   });
 
+  it('if we pass 1 should the retrun value be 1 also', () => {
+    expect(fibonacciSequence(1)).toEqual(1);
+  });
+
 });
