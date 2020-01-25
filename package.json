@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll"
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "eslint": "^6.8.0",
     "jest": "^24.1.0"
   }
 }
