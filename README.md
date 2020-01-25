@@ -34,10 +34,10 @@ function fibonacciSequence(num){
   if (num === 0){
     return 0;
   }else if (num === 1){
-    return initielArray;
+    return initielArray[initielArray.length - 1];
   }else{
     for(let i = 2 ; i <= number ; i++){
-      initielArray.push(initielArray[i-2] + initielArray[i-1]);
+      initielArray.push(initielArray[i - 2] + initielArray[i - 1]);
     }
     return initielArray[initielArray.length - 1];
   }
