@@ -59,16 +59,18 @@ class LinkedList {
 
   insertBefore(value, newVal){
     const node = new Node(newVal, null);
-    let currentNode = this.head, previousNode = currentNode;
+    let currentNode = this.head, previousNode = null;
     while (currentNode) {
-      if(currentNode.value === value){
+      if (currentNode.value === value) {
+        if (previousNode === null) {
+          this.head = node;
+        } else {
+          previousNode.next = node;
+        }
         node.next = currentNode;
-        // currentNode = node;
-        previousNode.next = node;
         break;
-      }else{
-        previousNode = currentNode;
       }
+      previousNode = currentNode;
       currentNode = currentNode.next;
     }
   }
@@ -81,6 +83,9 @@ class LinkedList {
         node.next = currentNode.next;
         currentNode.next = node;
         break;
+      }
+      if (currentNode.next === null) {
+        currentNode.next = node;
       }
       currentNode = currentNode.next;
     }

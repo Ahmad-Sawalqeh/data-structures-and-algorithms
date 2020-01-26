@@ -45,14 +45,14 @@ describe('Linked List Module', () => {
     expect(list.head.next.value).toEqual(100);
   });
 
-  // it('Can successfully insert a node before the first node of a linked list', () => {
-  //   list.append(8);
-  //   list.append(2);
-  //   list.append(7);
-  //   list.append(6);
-  //   list.insertBefore(8,100);
-  //   expect(list.head.value).toEqual(100);
-  // });
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    list.append(8);
+    list.append(2);
+    list.append(7);
+    list.append(6);
+    list.insertBefore(8,100);
+    expect(list.head.value).toEqual(100);
+  });
 
   it('Can successfully insert after a node in the middle of the linked list', () => {
     list.insert(67);
