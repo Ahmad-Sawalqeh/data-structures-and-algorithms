@@ -108,6 +108,35 @@ class LinkedList {
     }
   }
 
+  /*
+  kthFromEnd(k) {
+        let currentNode = this.head;
+        let length = 0;
+
+        while (currentNode) {
+            length++;
+            currentNode = currentNode.next;
+        }
+
+        let askedNode = length - 1 - k;
+        if (askedNode < 0 || k < 0) {
+            return 'exception'
+        }
+
+        currentNode = this.head;
+
+        while (askedNode > 0) {
+
+            askedNode--;
+            currentNode = currentNode.next;
+
+        }
+
+
+        return currentNode.value;
+    }
+  */
+
 }
 
 
