@@ -14,6 +14,10 @@ write a function to accepts an integer, and returns the nth number in the Fibona
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 for the first function a used nested for-loop to reach all elements. the second function i used if-statment with for-loop.
 
+## UML
+![](./challenges/assets/fibonacciSequence.jpeg)
+![](./challenges/assets/sumEachRowInMatrix.jpeg)
+
 ## Solution
 <!-- Embedded whiteboard image -->
 ```
