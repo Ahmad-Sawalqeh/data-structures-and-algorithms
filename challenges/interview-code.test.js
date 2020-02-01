@@ -1,6 +1,6 @@
 'use strict';
 
-const { sumEachRowInMatrix, fibonacciSequence } = require('./interview-code.js'); 
+const { sumEachRowInMatrix, fibonacciSequence, } = require('./interview-code.js');
 
 
 describe('testing sum of each row in a matrix array', () => {
