@@ -26,4 +26,4 @@ I started to apply the stack & queue accpect on node linked list by writing cals
 
 ## API
 <!-- Description of each method publicly available to your Stack and Queue-->
-![](./assert.stack-and-queue.jpeg)
+![](./assert/stack-and-queue.jpeg)
