@@ -11,95 +11,41 @@ create LinkedList class and Write these methods:
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-using Object Oriented programming
+using Object Oriented programming and for the `append` method the Big O(1) whereas `insertBefore` method Big O(n) also for the `insertAfter` method the Big O(n)
+
+
+## UML
+![](./assets/insert-after-and-before.jpeg)
+
 ## Solution
 <!-- Embedded whiteboard -->
 ```
-class Node {
-  constructor(value, next) {
-    this.value = value;
-    this.next = next;
+insertBefore(value, newVal){
+  const node = new Node(newVal, null);
+  let currentNode = this.head, previousNode = currentNode;
+  while (currentNode) {
+    if(currentNode.value === value){
+      node.next = currentNode;
+      // currentNode = node;
+      previousNode.next = node;
+      break;
+    }else{
+      previousNode = currentNode;
+    }
+    currentNode = currentNode.next;
   }
 }
 
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-
-  append(value) {
-    const node = new Node(value, null);
-    if (!this.head) {
-      this.head = node;
-      return this;
+insertAfter(value, newVal){
+  const node = new Node(newVal, null);
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.value === value) {
+      node.next = currentNode.next;
+      currentNode.next = node;
+      break;
     }
-    let currentNode = this.head;
-    while(currentNode.next) {
-      currentNode = currentNode.next;
-    }
-    currentNode.next = node;
-    return this;
+    currentNode = currentNode.next;
   }
-
-  insert(value) {
-    const node = new Node(value, null);
-    if (!this.head) {
-      this.head = node;
-      return this;
-    }
-    let currentNode = this.head;
-    this.head = node;
-    node.next = currentNode;
-    return this;
-  }
-
-  includes(value) {
-    let currentNode = this.head;
-    while (currentNode) {
-      if (currentNode.value === value) return true;
-      currentNode = currentNode.next;
-    }
-    return false;
-  }
-
-  toString(){
-    let nodeList = [], currentNode = this.head;
-    while (currentNode) {
-      nodeList.push(currentNode.value);
-      currentNode = currentNode.next;
-    }
-    return nodeList.map(val => `{ ${val} }`).join(' --> ').concat(` --> NULL`);
-  }
-
-  insertBefore(value, newVal){
-    const node = new Node(newVal, null);
-    let currentNode = this.head, previousNode = currentNode;
-    while (currentNode) {
-      if(currentNode.value === value){
-        node.next = currentNode;
-        // currentNode = node;
-        previousNode.next = node;
-        break;
-      }else{
-        previousNode = currentNode;
-      }
-      currentNode = currentNode.next;
-    }
-  }
-
-  insertAfter(value, newVal){
-    const node = new Node(newVal, null);
-    let currentNode = this.head;
-    while (currentNode) {
-      if (currentNode.value === value) {
-        node.next = currentNode.next;
-        currentNode.next = node;
-        break;
-      }
-      currentNode = currentNode.next;
-    }
-  }
-
 }
 ```
