@@ -36,7 +36,7 @@ class Stack{
 
 }
 
-class Queue{
+class PseudoQueue {
   constructor(front = null, rear = null){
     this.front = front;
     this.rear = rear;
@@ -74,4 +74,4 @@ class Queue{
   }
 }
 
-module.exports = { Node, Stack, Queue, };
+module.exports = { Node, Stack, PseudoQueue, };
