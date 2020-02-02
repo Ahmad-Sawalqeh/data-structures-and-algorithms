@@ -12,8 +12,8 @@ The `Stack` instances have only `push`, `pop`, and `peek` methods.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-and Big O of both Stack & Queue is O(n).
+starting to inmplement the `enqueue()` concept by using push method from stack class and for the `dequeue()` by testing at first if the new stack empty and the already exsist stack contain values to do while loop and itirate the exsist stack values and Big O of dequeue is O(n).
 
 ## UML
 <!-- Description of each method publicly available to your Stack and Queue-->
-![](./assert/stack-and-queue.jpeg)
+![](./assert/)

@@ -37,41 +37,48 @@ class Stack{
 }
 
 class PseudoQueue {
-  constructor(front = null, rear = null){
-    this.front = front;
-    this.rear = rear;
+  constructor(){
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
   }
 
   enqueue(value){
-    let node = new Node(value);
-    if(!this.front) this.front = node;
-    this.rear = node;
+    this.stack1.push(value);
   }
 
   dequeue(){
-    if(!this.front) return null;
-    let node = this.front;
-    if(this.front !== this.rear){
-      let currentNode = this.rear;
-      while(currentNode.next){
-        currentNode = currentNode.next;
+    if(this.stack2.isEmpty()){
+      // if(!this.stack1.isEmpty()){
+      while(!this.stack1.isEmpty()){
+        this.stack2.push(this.stack2.pop());
       }
-      this.front = currentNode;
-      this.front.next = null;
+      return this.stack2.pop();
     }else{
-      this.front = null;
-      this.rear = null;
+      return this.stack2.pop();
     }
-    return node.value;
+    // }
+    // let node = this.front;
+    // if(this.front !== this.rear){
+    //   let currentNode = this.rear;
+    //   while(currentNode.next){
+    //     currentNode = currentNode.next;
+    //   }
+    //   this.front = currentNode;
+    //   this.front.next = null;
+    // }else{
+    //   this.front = null;
+    //   this.rear = null;
+    // }
+    // return node.value;
   }
 
-  peek(){
-    return !this.front ? null : this.front.value;
-  }
+  // peek(){
+  //   return !this.front ? null : this.front.value;
+  // }
 
-  isEmpty(){
-    if(this.front === null && this.rear === null) return true;
-  }
+  // isEmpty(){
+  //   if(this.front === null && this.rear === null) return true;
+  // }
 }
 
 module.exports = { Node, Stack, PseudoQueue, };
