@@ -8,7 +8,10 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-itirating to know the length of the list of nodes,and another itirate to take the right value
+itirating to know the length of the list of nodes,and another itirate to take the right value, and the (Big O) for the `ll-kth-from-end()` is O(n).
+
+## UML 
+![](./assets/ll-kth-from-end.jpeg)
 
 ## Solution
 <!-- Embedded whiteboard -->
