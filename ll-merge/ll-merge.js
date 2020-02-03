@@ -123,7 +123,7 @@ class LinkedList {
         currentNode2 = currentNode2.next;
       }
     }
-    return this
+    return this;
   }
 }
 

@@ -12,7 +12,10 @@ Write a function called `mergeLists` which takes two linked lists as arguments. 
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-i started to assign each value of each list one at a time into main list created by class LinkedList
+i started to assign each value of each list one at a time into main list created by class LinkedList, and the Big O of `mergeLists` is O(2n).
+
+## UML
+![](./assert/ll-merge.jpeg)
 
 ## Solution
 <!-- Embedded whiteboard image -->
@@ -36,6 +39,3 @@ mergeLists(li1, li2) {
   }
 ```
 
-# UML
-
-![](assert/ll-merge.jpeg)

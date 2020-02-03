@@ -2,7 +2,7 @@
 
 const LinkedList = require('./ll-merge.js');
 
-let mergedLinkedList, newList, list1, list2;
+let mergedLinkedList, list1, list2;
 
 beforeEach(() => {
 
@@ -20,7 +20,7 @@ beforeEach(() => {
   list2.append(3);
   list2.append(4);
 
-  mergedLinkedList.mergeLists(list1, list2)
+  mergedLinkedList.mergeLists(list1, list2);
 
 
 });
@@ -28,7 +28,6 @@ beforeEach(() => {
 describe('Linked List Module', () => {
 
   it('Can successfully instantiate an empty linked list', () => {
-    
     expect(mergedLinkedList.toString()).toEqual(`{ 1 } --> { 1 } --> { 2 } --> { 2 } --> { 3 } --> { 3 } --> { 4 } --> { 4 } --> NULL`);
   });
 
