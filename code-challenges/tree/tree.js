@@ -44,6 +44,10 @@ class BinaryTree {
     return this.result;
   }
 
+  breadthFirstTraversal(){
+
+  }
+
 }
 
 class BinarySearchTree{
