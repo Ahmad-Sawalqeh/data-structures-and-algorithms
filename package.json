@@ -1,16 +1,25 @@
 {
-  "name": "3-code-challenges",
+  "name": "data-structures-and-algorithms",
   "version": "1.0.0",
-  "description": "",
+  "description": "### 301 code fellows course:",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll"
+    "lint": "eslint '**/*.js'",
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms.git"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/Ahmad-Sawalqeh/data-structures-and-algorithms#readme",
   "dependencies": {
-    "jest": "^24.1.0"
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
   }
 }
