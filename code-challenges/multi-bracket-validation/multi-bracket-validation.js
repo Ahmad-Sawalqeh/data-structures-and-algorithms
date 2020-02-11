@@ -2,32 +2,26 @@
 
 function multiBracketValidation(input){
 
-  let matchBrackets = [];
+  let square = [], carly = [], pranthises = [];
 
   for (let i = 0; i < input.length; i++) {
     const character = input[i];
-
-    if (character === '(' || character === '[' || character === '{') {
-      matchBrackets.push(character);
-    } else if (character === ')' || character === ']' || character === '}') {
-      const match = matchBrackets.pop();
-      if (bracketMap[match] !== character) {
-        return false;
-      }
+    if (character === '(' || character === ')') {
+      pranthises.push(character);
+    }else if(character === '[' || character === ']'){
+      square.push(character);
+    }else if(character === '{' || character === '}'){
+      carly.push(character);
     }
 
   }
 
-  if (!matchBrackets[0]) {
-    return false;
-  }else{
+  if((square.length % 2 === 0 ) && (carly.length % 2 === 0 ) && (pranthises.length % 2 === 0 )){
     return true;
+  }else{
+    return false;
   }
 
 }
-
-
-console.log(multiBracketValidation('(){}[]'));
-
 
 module.exports = multiBracketValidation;
