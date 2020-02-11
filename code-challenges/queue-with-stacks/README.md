@@ -16,4 +16,4 @@ starting to inmplement the `enqueue()` concept by using push method from stack c
 
 ## UML
 <!-- Description of each method publicly available to your Stack and Queue-->
-![](./assert/)
+![](./assert/queueWithStack.jpeg)

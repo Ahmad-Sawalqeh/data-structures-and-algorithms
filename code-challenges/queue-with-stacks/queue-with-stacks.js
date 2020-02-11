@@ -48,37 +48,36 @@ class PseudoQueue {
 
   dequeue(){
     if(this.stack2.isEmpty()){
-      // if(!this.stack1.isEmpty()){
       while(!this.stack1.isEmpty()){
-        this.stack2.push(this.stack2.pop());
+        this.stack2.push(this.stack1.pop());
       }
-      return this.stack2.pop();
-    }else{
-      return this.stack2.pop();
     }
-    // }
-    // let node = this.front;
-    // if(this.front !== this.rear){
-    //   let currentNode = this.rear;
-    //   while(currentNode.next){
-    //     currentNode = currentNode.next;
-    //   }
-    //   this.front = currentNode;
-    //   this.front.next = null;
-    // }else{
-    //   this.front = null;
-    //   this.rear = null;
-    // }
-    // return node.value;
+    return this.stack2.pop();
   }
 
-  // peek(){
-  //   return !this.front ? null : this.front.value;
-  // }
-
-  // isEmpty(){
-  //   if(this.front === null && this.rear === null) return true;
-  // }
 }
 
-module.exports = { Node, Stack, PseudoQueue, };
+module.exports = PseudoQueue;
+
+// peek(){
+//   return !this.front ? null : this.front.value;
+// }
+
+// isEmpty(){
+//   if(this.front === null && this.rear === null) return true;
+// }
+
+// }
+// let node = this.front;
+// if(this.front !== this.rear){
+//   let currentNode = this.rear;
+//   while(currentNode.next){
+//     currentNode = currentNode.next;
+//   }
+//   this.front = currentNode;
+//   this.front.next = null;
+// }else{
+//   this.front = null;
+//   this.rear = null;
+// }
+// return node.value;
