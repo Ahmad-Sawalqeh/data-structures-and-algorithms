@@ -14,7 +14,9 @@ finaly return the new tree.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+by using recursive function to move around all nodes in the tree as preorder method. also using if statment to test the values of the nodes. <br>and the **Big O notation will be O(n)** .
 
-## Solution
+## UML
 <!-- Embedded whiteboard image -->
+![](./assert/fizz-buzz-tree.jpeg)
 
