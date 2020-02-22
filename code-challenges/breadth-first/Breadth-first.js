@@ -44,27 +44,37 @@ class BinaryTree {
     return this.result;
   }
 
-  breadthFirstTraversal(){
+  breadthFirst(tree){
+
+    let rootNode = tree.root, node;
+    let result = [] ;
+    let temp = [];
+
+    if(tree.root === null) return null;
+
+    // result = [2, 7, 5, 2, 6, 9, 5, 11, 4];
+    // temp = [rootNode, leftNode, rightNode];
+    /*
+                [2]
+        [7]             [5]
+    [2]     [6]             [9]
+        [5]     [11]    [4]
+    */
+
+    temp.push(rootNode);
+
+    while (temp.length > 0) {
+      node = temp[0];
+      result.push(node.value);
+      if (node.left) temp.push(node.left);
+      if (node.right) temp.push(node.right);
+      temp.shift();
+    }
+
+    return result;
 
   }
 
 }
 
-class BinarySearchTree{
-  constructor(root = null){
-    this.root = root;
-  }
-
-  add(value) {
-    let newNodee = new Node(value);
-
-  }
-
-  contains(value) {
-
-    return true;
-  }
-
-}
-
-module.exports = { Node, BinaryTree, BinarySearchTree,};
+module.exports = { Node, BinaryTree,};
