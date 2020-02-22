@@ -44,8 +44,20 @@ class BinaryTree {
     return this.result;
   }
 
-  findMaximumValue(){
-    
+  findMaximumValue(tree){
+
+    let max = -Infinity;
+
+    if(tree.root === null) return null;
+
+    let _walk = (node) => {
+      if(node.value > max) max = node.value;
+      if(node.left) _walk(node.left);
+      if(node.right) _walk(node.right);
+    };
+
+    _walk(tree.root);
+    return max;
   }
 
 }
