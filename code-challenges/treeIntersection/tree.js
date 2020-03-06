@@ -46,22 +46,4 @@ class BinaryTree {
 
 }
 
-class BinarySearchTree{
-  constructor(root = null){
-    this.root = root;
-  }
-
-
-  add(value) {
-    let newNodee = new Node(value);
-
-  }
-
-  contains(value) {
-
-    return true;
-  }
-
-}
-
-module.exports = { Node, BinaryTree, BinarySearchTree,};
+module.exports = { Node, BinaryTree, };
